@@ -1,0 +1,292 @@
+/* #region Fonts */
+@font-face {
+    font-family: OrbitronWGTH;
+    src: url(/assets/fonts/Orbitron-VariableFont_wght.ttf) format('woff2-variations');
+    src: url(/assets/fonts/Orbitron-VariableFont_wght.ttf) format('woff2') tech('variations');
+    src: url(/assets/fonts/Orbitron-Regular.ttf);
+    font-weight: 100 1000;
+    font-weight: regular;
+    font-stretch: 25% 151%;
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url(/assets/fonts/Orbitron-Regular.ttf);
+    font-weight: regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url(/assets/fonts/IBMPlexSans-Regular.ttf) format("truetype");
+    font-weight: regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url(/assets/fonts/IBMPlexSans-Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url(/assets/fonts/IBMPlexSans-Light.ttf) format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url(/assets/fonts/IBMPlexSans-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* #endregion */
+
+.super-bold {
+    font-weight: 1000;
+}
+
+.orbitron {
+    font-family: Orbitron;
+}
+
+.orbitron-big {
+    font-family: Orbitron;
+    font-size: 3.6rem;
+    font-stretch: 100%;
+    letter-spacing: 0.5rem;
+}
+
+.letter-spacing-0 {
+    letter-spacing: 0;
+}
+
+.letter-spacing-02rem {
+    letter-spacing: .2rem;
+}
+
+/* #region Colors */
+
+
+:root {
+
+    --mrm-green: #22E79A;
+    --mrm-green-rgb: 34, 231, 154;
+    --mrm-yellow: #BFFD64;
+    --mrm-yellow-rgb: 191, 253, 100;
+    --mrm-blue: #1978BC;
+    --mrm-blue-rgb: 25, 120, 188;
+    --mrm-blue-light: #1CB7E3;
+    --mrm-blue-light-rgb: 28, 183, 227;
+
+    --white-rgb: 255, 255, 255;
+
+    --bs-primary: var(--mrm-green);
+    --bs-primary-rgb: var(--mrm-green-rgb);
+    --bs-primary-color-rgb: var(--mrm-green-rgb);
+    --bs-primary-text-emphasis: #16ab72;
+    --bs-link-color: var(--bs-dark);
+    --bs-link-hover-color: #16ab72;
+    --bs-primary-border-subtle: #0c7c51;
+    --bs-focus-ring-color: rgba(34, 231, 154, 0.25);
+}
+
+:root[data-bs-theme=dark] {
+    --bs-link-color: var(--bs-light);
+}
+
+
+.text-mrm-green {
+    color: var(--mrm-green);
+}
+
+.text-mrm-yellow {
+    color: var(--mrm-yellow);
+}
+
+.text-mrm-blue-light {
+    color: var(--mrm-blue-light);
+}
+
+.color-inherit {
+    color: inherit;
+}
+
+/* #endregion */
+
+body {
+    font-family: IBMPlexSans;
+    transition: background-color 1s linear;
+}
+
+#hero-section {
+    min-height: 900px;
+}
+
+#rive-container {
+    background-color: var(--bg-body);
+    aspect-ratio: 1/1;
+    transition: width 1s ease-in-out 500ms,
+        height 1s ease-in-out 500ms,
+        background-color 0.5s linear;
+    height: 250px;
+}
+
+#rive-container:hover {
+    background-color: var(--bs-primary);
+}
+
+.navbar-nav {
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: bold;
+    --bs-navbar-active-color: var(--mrm-green);
+    --bs-navbar-hover-color: rgba(34, 231, 154, 0.9);
+    --bs-navbar-active-color: var(--mrm-green);
+    --bs-nav-link-color: var(--bs-gray-200);
+    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+}
+
+.dropdown-menu-dark {
+    --bs-dropdown-color: #dee2e6;
+    --bs-dropdown-bg: #343a40;
+    --bs-dropdown-border-color: var(--bs-border-color-translucent);
+    --bs-dropdown-box-shadow: ;
+    --bs-dropdown-link-color: var(--bs-light);
+    --bs-dropdown-link-hover-color: #fff;
+    --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+    --bs-dropdown-link-hover-bg: rgba(34, 231, 154, 0.15);
+    --bs-dropdown-link-active-color: #fff;
+    --bs-dropdown-link-active-bg: var(--bs-primary);
+    --bs-dropdown-link-disabled-color: #adb5bd;
+    --bs-dropdown-header-color: var(--bs-primary);
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.nav-link:hover {
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-size: 0rem;
+    letter-spacing: .2rem;
+}
+
+.nav-item {
+    font-family: Orbitron;
+    letter-spacing: 0.3rem;
+    ;
+}
+
+.dropdown-item {
+    font-family: IBMPlexSans;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.dropdown-item:hover {
+    color: var(--bs-primary);
+}
+
+.name-container {
+    font-size: 0rem;
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #rive-container {
+        height: 300px;
+    }
+
+    .w-lg-50 {
+        width: 50%;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #rive-container {
+        height: 300px;
+    }
+
+    .w-xl-50 {
+        width: 50%;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    #rive-container {
+        height: 300px;
+    }
+}
+
+#greetings-message {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    line-height: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+
+
+
+
+/* #region Links */
+
+.link-icon {
+    --bs-btn-font-weight: 100;
+    --bs-btn-hover-color: var(--bs-primary);
+    --bs-btn-active-color: var(--bs-primary);
+    transition: color 500ms ease-out, transform 1000ms;
+    text-decoration: none;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+}
+
+[data-bs-theme=dark] .link-icon {
+    font-weight: 200;
+}
+
+.btn.link-icon:hover,
+.btn.link-icon:focus-visible {
+    transform: translateY(-0.75rem);
+    transition: transform 250ms;
+}
+
+.btn.link-icon i,
+.btn.link-iconi {
+    transition: transform 1000ms;
+}
+
+.btn.link-icon:hover i,
+.btn.link-icon:focus-visible i {
+    transform: scale(1.2);
+    transition: transform 300ms ease-in;
+}
+
+.btn.link-icon span {
+    opacity: 0;
+    transition: all 500ms ease-out;
+}
+
+.btn.link-icon:hover span,
+.btn.link-icon:focus-visible span {
+    opacity: 100;
+}
+
+/* #endregion */

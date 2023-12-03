@@ -1,0 +1,204 @@
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1080px, initial-scale=1.0">
+    <title>MRM's Portafolio</title>
+    <link rel="icon" href="favicon.svg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="/assets/custom/style.css">
+</head>
+
+<body>
+
+    <!-- begin: navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1">
+
+                <div class="px-2">
+                    <span class="orbitron fs-5 letter-spacing-0 text-mrm-yellow fw-bold">M</span>
+                    <span class="orbitron fs-5 letter-spacing-0 text-mrm-green fw-bold">R</span>
+                    <span class="orbitron fs-5 letter-spacing-0 text-mrm-blue-light fw-bold">M</span>
+                    <span class="orbitron fs-6 letter-spacing-02rem">'s Portafolio</span>
+                </div>
+
+            </a>
+            <div class="form-check form-switch d-flex">
+                <input class="form-check-input" type="checkbox" role="switch" id="darkModeCB" checked>
+                <label class="form-check-label ms-2" for="darkModeCB">
+                    <i class="fa-solid fa-moon text-light fs-4 "></i>
+                </label>
+
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-md-2 gap-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/MatteoRebecchiMari" target="_blank"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github profile">Profile</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Download
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://drive.google.com/drive/folders/1Q_EB56kdYrE6P41hWNZlkuf6EESWYEVr?usp=sharing">Curriculum
+                                    Vitae (english)</a></li>
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://drive.google.com/drive/folders/1Q_EB56kdYrE6P41hWNZlkuf6EESWYEVr?usp=sharing">Curriculum
+                                    Vitae (italian)</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://drive.google.com/file/d/1-WeC3g-2XiHMYdK7QBW5gSoKiVHZkLSK/view?usp=sharing">Three-year
+                                    thesis</a></li>
+                            <li><a class="dropdown-item" target="_blank"
+                                    href="https://drive.google.com/file/d/1-_Fu7DCkhBxLHkGsSUscu7VRgSJ80q_8/view?usp=sharing">Master's
+                                    degree thesis</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end: navbar -->
+
+    <!-- begin: hero -->
+    <div id="hero-section" class="d-flex flex-column justify-content-center align-items-center">
+
+
+        <div class="d-flex d-none">
+            <div class="btn btn-primary me-2" id="startButton">
+                Start
+            </div>
+            <div class="btn btn-primary me-2" id="stopButton">
+                Stop
+            </div>
+        </div>
+
+        <!-- begin: rocket -->
+        <div class="p-5 pt-0 d-flex justify-content-center">
+            <a href="https://rive.app/community/6987-13432-azure-rocket" target="_blank">
+                <div id="rive-container" class="position-relative rounded rounded-circle">
+                    <!-- Canvas for rive -->
+                    <canvas id="rive-canvas"
+                        class="d-flex position-absolute top-50 start-50 translate-middle h-100 w-100 bg-transparent p-2">
+                    </canvas>
+                </div>
+            </a>
+        </div>
+        <!-- end: rocket -->
+
+        <!--begin::Name-->
+        <div class="row">
+            <div class="col-12">
+                <div class="name-container text-center">
+
+                    <span class="orbitron-big text-mrm-yellow fw-bold">M</span>
+                    <span class="orbitron-big d-none d-xl-inline-block">atteo</span>
+                    <span class="pe-4"> </span>
+
+                    <span class="orbitron-big text-mrm-green fw-bold">R</span>
+                    <span class="orbitron-big d-none d-xl-inline-block">ebecchi</span>
+                    <span class="pe-4"> </span>
+
+                    <span class="orbitron-big text-mrm-blue-light fw-bold">M</span>
+                    <span class="orbitron-big d-none d-xl-inline-block">ari</span>
+
+                </div>
+            </div>
+        </div>
+        <!--end::Name-->
+
+        <!--begin::Greetiings-->
+        <div class="d-flex justify-content-center mt-0 mt-xl-4 p-5 pb-0">
+            <div class="col-12">
+                <p id="greetings-message" class="text-center">
+                    Hi guys! I’m Matteo, a <span class="fw-bold">Software Engineer</span>, with a passion for <br
+                        class="d-none d-lg-none d-xl-inline">
+                    UI Design 🎨, Development 🚀, Snowboard 🏂 , Tennis 🎾 and Cats 🐈
+                </p>
+            </div>
+        </div>
+        <!--end::Greetiings-->
+
+        <!--begin::Links-->
+        <div id="links" class="mt-0 mt-xl-4 p-5">
+            <div class="d-flex flex-wrap justify-content-evenly gap-5">
+
+                <a href="mailto:matteo.rebecchimari@gmail.com" class="btn btn-link link-icon fs-1 px-3 px-lg-5">
+                    <div class="d-flex flex-column">
+                        <i class="fa-solid fa-envelope color-inherit"></i>
+                        <span class="fs-5 mt-3">Mail</span>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCbwY64YpG2ZGF8eRUBY6kQQ"
+                    class="btn btn-link link-icon fs-1 px-3 px-lg-5">
+                    <div class="d-flex flex-column">
+                        <i class="fa-brands fa-youtube color-inherit"></i>
+                        <span class="fs-5 mt-3">YouTube</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/MatteoRebecchiMari" class="btn btn-link link-icon fs-1 px-3 px-lg-5">
+                    <div class="d-flex flex-column">
+                        <i class="fa-brands fa-github color-inherit"></i>
+                        <span class="fs-5 mt-3">Github</span>
+                    </div>
+                </a>
+
+                <a href="https://it.linkedin.com/in/matteo-rebecchi-mari-18349812b"
+                    class="btn btn-link link-icon fs-1 px-3 px-lg-5">
+                    <div class="d-flex flex-column">
+                        <i class="fa-brands fa-linkedin color-inherit"></i>
+                        <span class="fs-5 mt-3">LinkedIn</span>
+                    </div>
+                </a>
+
+                <a href="https://twitter.com/FlutterMatteR" class="btn btn-link link-icon fs-1 px-3 px-lg-5">
+                    <div class="d-flex flex-column">
+                        <i class="fa-brands fa-x-twitter color-inherit"></i>
+                        <span class="fs-5 mt-3">X</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+        <!--end::Links-->
+
+    </div>
+    <!-- end: hero -->
+
+    <!--begin::ScriptSection-->
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+    <script src="/assets/custom/index.js"></script>
+    <!--end::ScriptSection-->
+</body>
+
+</html>
