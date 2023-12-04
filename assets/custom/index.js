@@ -5,6 +5,10 @@ const RiveHandler = function () {
 
     const init = function () {
 
+        if (riveInstance) {
+            return;
+        }
+
         // Html elements
         const riveCanvas = document.querySelector("#rive-canvas");
         const startButton = document.querySelector("#startButton");
@@ -69,23 +73,10 @@ const RiveHandler = function () {
                 // Create an intersection observer instance to detect when canvas is in view
                 const observer = new IntersectionObserver((entries, observer) => {
 
-                    entries.forEach((entry) => {
+                    setTimeout(() => {
+                        startTrigger.fire();
+                    }, 1000);
 
-                        // If the canvas element is in view, play the state machine
-                        // if (entry.isIntersecting) {
-                        //     r.play("State Machine 1");
-                        //     stateMachineInput.value = true;
-                        //     // Stop observing the canvas element
-                        //     // observer.unobserve(entry.target);
-                        // } else {
-                        //     // Pause the state machine if its out of view again if you want
-                        //     r.pause("State Machine 1");
-                        // }
-
-                        // when you're done, unobserve the canvas
-                        // observer.unobserve(entry.target);
-
-                    });
                 });
                 observer.observe(riveCanvas);
 
@@ -138,6 +129,7 @@ const RiveHandler = function () {
         );
 
 
+
     };
 
     return {
@@ -147,6 +139,7 @@ const RiveHandler = function () {
         clean: () => {
             if (riveInstance) {
                 riveInstance.cleanup();
+                riveInstance = undefined;
             }
         }
     };

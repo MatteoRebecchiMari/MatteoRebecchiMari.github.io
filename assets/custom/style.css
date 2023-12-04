@@ -19,7 +19,7 @@
 @font-face {
     font-family: IBMPlexSans;
     src: url(/assets/fonts/IBMPlexSans-Regular.ttf) format("truetype");
-    font-weight: regular;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -33,7 +33,14 @@
 @font-face {
     font-family: IBMPlexSans;
     src: url(/assets/fonts/IBMPlexSans-Light.ttf) format("truetype");
-    font-weight: lighter;
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url(/assets/fonts/IBMPlexSans-ExtraLight.ttf) format("truetype");
+    font-weight: 100;
     font-style: normal;
 }
 
@@ -56,9 +63,17 @@
 
 .orbitron-big {
     font-family: Orbitron;
-    font-size: 3.6rem;
+    font-size: 3rem;
     font-stretch: 100%;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .orbitron-big {
+        font-size: 3.6rem;
+        letter-spacing: 0.5rem;
+    }
 }
 
 .letter-spacing-0 {
@@ -95,7 +110,7 @@
     --bs-focus-ring-color: rgba(34, 231, 154, 0.25);
 }
 
-:root[data-bs-theme=dark] {
+:root[data-bs-theme="dark"] {
     --bs-link-color: var(--bs-light);
 }
 
@@ -182,13 +197,12 @@ body {
 
 .nav-item {
     font-family: Orbitron;
-    letter-spacing: 0.3rem;
-    ;
+    letter-spacing: 0.25rem;
 }
 
 .dropdown-item {
     font-family: IBMPlexSans;
-    font-weight: 400;
+    font-weight: 200;
     letter-spacing: normal;
 }
 
@@ -200,51 +214,24 @@ body {
     font-size: 0rem;
 }
 
-/*  Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    #rive-container {
-        height: 300px;
-    }
-
-    .w-lg-50 {
-        width: 50%;
-    }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    #rive-container {
-        height: 300px;
-    }
-
-    .w-xl-50 {
-        width: 50%;
-    }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    #rive-container {
-        height: 300px;
-    }
-}
-
 #greetings-message {
-    font-size: 1.4rem;
-    font-weight: lighter;
-    line-height: 3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 2.5rem;
     letter-spacing: 0.2rem;
 }
 
+html[data-bs-theme="dark"]>* #greetings-message {
+    font-weight: 100;
+}
 
+#greetings-message b {
+    font-weight: 600;
+}
 
-
+html[data-bs-theme="dark"]>* #greetings-message b {
+    font-weight: 400;
+}
 
 /* #region Links */
 
@@ -290,3 +277,44 @@ body {
 }
 
 /* #endregion */
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #rive-container {
+        height: 300px;
+    }
+
+    .w-lg-50 {
+        width: 50%;
+    }
+
+    #greetings-message,
+    html[data-bs-theme="dark"]>* #greetings-message {
+        line-height: 3rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #rive-container {
+        height: 300px;
+    }
+
+    .w-xl-50 {
+        width: 50%;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    #rive-container {
+        height: 300px;
+    }
+}
