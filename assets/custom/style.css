@@ -225,14 +225,6 @@ html[data-bs-theme="dark"]>* #greetings-message {
     font-weight: 100;
 }
 
-#greetings-message b {
-    font-weight: 600;
-}
-
-html[data-bs-theme="dark"]>* #greetings-message b {
-    font-weight: 400;
-}
-
 /* #region Links */
 
 .link-icon {
