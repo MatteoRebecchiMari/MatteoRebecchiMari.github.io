@@ -3,6 +3,10 @@ const RiveHandler = function () {
 
     let riveInstance;
 
+    // triggers for animation state handling
+    let startTrigger;
+    let stopTrigger;
+
     const init = function () {
 
         if (riveInstance) {
@@ -11,8 +15,6 @@ const RiveHandler = function () {
 
         // Html elements
         const riveCanvas = document.querySelector("#rive-canvas");
-        const startButton = document.querySelector("#startButton");
-        const stopButton = document.querySelector("#stopButton");
 
         // Rive setup https://help.rive.app/runtimes/layout
         const layout = new rive.Layout({
@@ -21,10 +23,6 @@ const RiveHandler = function () {
         });
 
         const stateMachine = "RocketLife";
-
-
-        let startTrigger;
-        let stopTrigger;
 
         // Load the rive instance from the source file
         riveInstance = new rive.Rive({
@@ -49,26 +47,11 @@ const RiveHandler = function () {
                 stopTrigger = stateMachineInputs.find((_) => _.name === 'StopFlying')
 
                 //
-                // When the mouse hover the canvas, the animation start
+                // When the page scroll the animation start
                 //
-                riveCanvas.addEventListener("mouseenter", (event) => {
+                window.addEventListener("scroll", () => {
                     startTrigger.fire();
-                });
-
-                //
-                // When the mouse exit the canvas, the animation stop
-                //
-                riveCanvas.addEventListener("mouseleave", (event) => {
-                    stopTrigger.fire();
-                });
-
-                startButton.addEventListener('click', (event) => {
-                    startTrigger.fire();
-                });
-
-                stopButton.addEventListener('click', (event) => {
-                    stopTrigger.fire();
-                });
+                })
 
                 // Create an intersection observer instance to detect when canvas is in view
                 const observer = new IntersectionObserver((entries, observer) => {
@@ -93,7 +76,7 @@ const RiveHandler = function () {
 
                 let stateName = event.data[0];
 
-                console.log(stateName);
+                //console.log(stateName);
 
                 switch (stateName) {
                     case 'Wobbling':
@@ -128,13 +111,16 @@ const RiveHandler = function () {
             false
         );
 
-
-
     };
 
     return {
         init: () => {
             init();
+        },
+        fireRocket: () => {
+            if (riveInstance && startTrigger) {
+                startTrigger.fire();
+            }
         },
         clean: () => {
             if (riveInstance) {
@@ -155,6 +141,9 @@ const DarkModeHandler = function () {
         checkboxDarkMode.addEventListener('change', (e) => {
 
             let isDarkSelected = checkboxDarkMode.checked === true;
+
+            // Start the rocket when the dark mode change
+            RiveHandler.fireRocket();
 
             if (isDarkSelected) {
                 document.querySelector('html').setAttribute('data-bs-theme', 'dark')
